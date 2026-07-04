@@ -4,3 +4,4 @@ __pycache__/
 *.ckpt
 *.pth
 generated_smiles_from_ckpt.txt
+!LLM/byte_pair_attention_model_vocab_200.pth

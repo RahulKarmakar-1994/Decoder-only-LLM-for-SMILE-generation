@@ -488,7 +488,7 @@ print(f"val loss {losses['val']:.4f}")
 # =========================
 
 save_path = (
-    "bpe_transformer_vocab200.ckpt"
+    "byte_pair_attention_model_vocab_200.pth"
 )
 
 checkpoint = {
