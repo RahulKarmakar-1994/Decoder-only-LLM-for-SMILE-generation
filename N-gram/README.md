@@ -8,6 +8,18 @@ This folder contains a feed-forward n-gram neural language model for SMILES gene
 n-gram_w_batchnorm_block_size_varry.py
 ```
 
+## How to Run
+
+From the repository root:
+
+```bash
+python N-gram/n-gram_w_batchnorm_block_size_varry.py
+```
+
+The script runs training, generation, RDKit validity checking, and uniqueness comparison from top to bottom.
+
+Before running on a new machine, update the `pd.read_csv(...)` path inside the script so it points to your local `tg_raw.csv`.
+
 ## What This Method Does
 
 The script trains a neural next-token predictor using a fixed-length context window. The workflow is:

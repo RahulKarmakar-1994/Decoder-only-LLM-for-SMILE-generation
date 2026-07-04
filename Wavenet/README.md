@@ -8,6 +8,18 @@ This folder contains a WaveNet-inspired autoregressive SMILES generator.
 Wavenet.py
 ```
 
+## How to Run
+
+From the repository root:
+
+```bash
+python Wavenet/Wavenet.py
+```
+
+The script runs training, generation, RDKit validity checking, and uniqueness comparison from top to bottom.
+
+Before running on a new machine, update the `pd.read_csv(...)` path inside the script so it points to your local `tg_raw.csv`.
+
 ## What This Method Does
 
 The script trains a hierarchical neural language model over SMILES tokens. The workflow is:

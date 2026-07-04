@@ -82,6 +82,18 @@ The generated SMILES are written to:
 LLM/generated_smiles_from_ckpt.txt
 ```
 
+## Run the Training Scripts
+
+From the repository root:
+
+```bash
+python LLM/LLM.py
+python N-gram/n-gram_w_batchnorm_block_size_varry.py
+python Wavenet/Wavenet.py
+```
+
+The scripts are notebook-style Python files and run top-to-bottom. Before running on a new machine, check the `pd.read_csv(...)` path inside each script and point it to your local `tg_raw.csv`.
+
 ## Method READMEs
 
 See the method-specific documentation for details:

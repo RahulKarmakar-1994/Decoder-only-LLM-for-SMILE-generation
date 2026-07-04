@@ -79,6 +79,23 @@ dropout
 
 This makes the checkpoint usable for generation because it stores both the model weights and the tokenizer/model configuration.
 
+## Train the Model
+
+From the repository root:
+
+```bash
+python LLM/LLM.py
+```
+
+Or from inside this folder:
+
+```bash
+cd LLM
+python LLM.py
+```
+
+Before running on a new machine, update the `pd.read_csv(...)` path in `LLM.py` if needed.
+
 ## Generate From the Saved Checkpoint
 
 Use the standalone generation script:
