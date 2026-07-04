@@ -1,7 +1,42 @@
-# Decoder-only-LLM-for-SMILE-generation
 # LLM Method: Decoder-only Transformer for SMILES Generation
 
 This folder contains the Transformer-based SMILES generator and a separate script for generation from a saved checkpoint.
+
+## Quick Start
+
+Run these commands from the repository root:
+
+```bash
+cd LLM
+```
+
+Train the Transformer and save the checkpoint:
+
+```bash
+python LLM.py
+```
+
+Generate SMILES from the saved checkpoint:
+
+```bash
+python generate_from_checkpoint.py \
+  --checkpoint byte_pair_attention_model_vocab_200.pth \
+  --num-smiles 1000
+```
+
+The generated SMILES are saved to:
+
+```text
+generated_smiles_from_ckpt.txt
+```
+
+To generate more molecules, change `--num-smiles`:
+
+```bash
+python generate_from_checkpoint.py \
+  --checkpoint byte_pair_attention_model_vocab_200.pth \
+  --num-smiles 10000
+```
 
 ## Files
 
