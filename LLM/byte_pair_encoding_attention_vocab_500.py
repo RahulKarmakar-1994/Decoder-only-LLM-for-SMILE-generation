@@ -34,7 +34,7 @@ index2smi = dict((i, c) for i, c in enumerate(SMILES_CHARS))
 # In[3]:
 
 
-data=pd.read_csv("tg_raw.csv")
+data=pd.read_csv("/Users/rahulkarmakar/Documents/PostDoc/IIT_Madras/Machine_Learning/glass_transition_data/attachments/tg_raw.csv")
 data
 
 text = data['SMILES']
@@ -482,6 +482,42 @@ print(f"val loss {losses['val']:.4f}")
 
 # # Put the model in evaluation mode
 # model.eval()
+#%%
+# =========================
+# SAVE MODEL CHECKPOINT
+# =========================
+
+save_path = (
+    "/Users/rahulkarmakar/Documents/PostDoc/IIT_Madras/"
+    "Machine_Learning/glass_transition_data/attachments/"
+    "New_run_after_Random_shuffling/Using_dataloader/"
+    "Reduce_train_size/bpe_transformer_vocab200.ckpt"
+)
+
+checkpoint = {
+    # model
+    "model_state_dict": model.state_dict(),
+
+    # vocabulary
+    "stoi": stoi,
+    "itos": itos,
+    "vocab_size": vocab_size,
+
+    # BPE info (important for reproducibility)
+    "merges": merges,
+    "base_vocab": SMILES_CHARS,
+
+    # model hyperparameters
+    "block_size": block_size,
+    "n_embd": n_embd,
+    "n_head": n_head,
+    "n_layer": n_layer,
+    "dropout": dropout,
+}
+
+torch.save(checkpoint, save_path)
+print(f"✅ Model checkpoint saved at:\n{save_path}")
+
 #%%
 valid_smile = []
 #%%
